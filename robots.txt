@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://qyt-llc.com/sitemap.xml

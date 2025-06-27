@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="Wed, 21 Oct 2099 07:28:00 GMT">
+
+    <meta name="description" content="homepage of QYT合同会社">
+    <meta name="keywords" content="QYT合同会社">
+    <meta name="author" content="qyt">
+    <meta name="copyright" content="© 2025 qyt llc.">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" href="img/siteIcon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/siteIcon.jpg">
+    <!-- <script src="./js/service.js" defer></script> -->
+    <script src="./js/common.js" defer></script>
+
+    <title>QYT合同会社</title>
+</head>
+
+
+
+<body>
+    <header>
+        <button id="menuToggle" class="menuToggle"> ☰</button>
+        <div id="menu" class="menu">
+            <button id="closeMenu" class="closeMenu">✖</button>
+            <nav class="nav-mobile">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href='javascript:void(0);' onclick="jumpToIndex()"><i class="fas fa-home movetop"></i> ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='javascript:void(0);' onclick="jumpToCompany()"><i class="fas fa-building"></i> 会社情報</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./company.html#tab1'>メッセージ</a></li>
+                            <li><a href='./company.html#tab2'>会社概要</a></li>
+                            <li><a href='./company.html#tab3'>会社沿革</a></li>
+                            <li><a href='./company.html#tab4'>組織体制</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item  current"><a href='javascript:void(0);' onclick="jumpToService()"><i
+                                class="fas fa-laptop-code"></i>サービス</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./service.html#service1' onclick="doClick('service1')">システム開発</a></li>
+                            <li><a href='./service.html#service2' onclick="doClick('service2')">インフラ構築</a></li>
+                            <li><a href='./service.html#service3' onclick="doClick('service3')">AI・データ分析</a></li>
+                            <li><a href='./service.html#service4' onclick="doClick('service4')">ITコンサル</a></li>
+                            <li><a href='./service.html#service5' onclick="doClick('service5')">セキュリティ対策</a></li>
+                            <li><a href='./service.html#service6' onclick="doClick('service6')">DX支援</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpTorecruit()"><i
+                                class="fas fa-users"></i>採用情報</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./recruit.html#recruit1'>新卒採用</a></li>
+                            <li><a href='./recruit.html#recruit2'>中途採用</a></li>
+                            <li><a href='./recruit.html#recruit3'>社員インタビュー</a></li>
+                            <li><a href='./recruit.html#recruit4'>パートナー募集</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToconsult()"><i
+                                class="fas fa-envelope"></i>お問い合わせ</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./consult.html#consult1'>お問い合わせフォーム</a></li>
+                            <li><a href='./index.html#consult-section'>アクセス</a></li>
+                            <li><a href='javascript:window.open("./privacy.html")'>プライバシーポリシー</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="overlay" class="overlay"></div>
+
+
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="QYT合同会社">
+                <h1 class="title movetop"></h1>
+            </div>
+
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToIndex()"><i
+                                class="fas fa-home movetop"></i> ホーム</a></li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToCompany()"><i
+                                class="fas fa-building"></i> 会社情報</a>
+                        <ul class="subnav-list">
+                            <li><a href='./company.html#tab1'>メッセージ</a></li>
+                            <li><a href='./company.html#tab2'>会社概要</a></li>
+                            <li><a href='./company.html#tab3'>会社沿革</a></li>
+                            <li><a href='./company.html#tab4'>組織体制</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item  current"><a href='javascript:void(0);' onclick="jumpToService()"><i
+                                class="fas fa-laptop-code"></i> サービス</a>
+                        <ul class="subnav-list">
+                            <li><a href='./service.html#service1' onclick="doClick('service1')">システム開発</a></li>
+                            <li><a href='./service.html#service2' onclick="doClick('service2')">インフラ構築</a></li>
+                            <li><a href='./service.html#service3' onclick="doClick('service3')">AI・データ分析</a></li>
+                            <li><a href='./service.html#service4' onclick="doClick('service4')">ITコンサル</a></li>
+                            <li><a href='./service.html#service5' onclick="doClick('service5')">セキュリティ対策</a></li>
+                            <li><a href='./service.html#service6' onclick="doClick('service6')">DX支援</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpTorecruit()"><i
+                                class="fas fa-users"></i> 採用情報</a>
+                        <ul class="subnav-list">
+                            <li><a href='./recruit.html#recruit1'>新卒採用</a></li>
+                            <li><a href='./recruit.html#recruit2'>中途採用</a></li>
+                            <li><a href='./recruit.html#recruit3'>社員インタビュー</a></li>
+                            <li><a href='./recruit.html#recruit4'>パートナー募集</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToconsult()"><i
+                                class="fas fa-envelope"></i>お問い合わせ</a>
+                        <ul class="subnav-list">
+                            <li><a href='./consult.html#consult1'>お問い合わせフォーム</a></li>
+                            <li><a href='./index.html#consult-section'>アクセス</a></li>
+                            <li><a href='javascript:window.open("./privacy.html")'>プライバシーポリシー</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+
+
+    <!-- 主内容区域 -->
+    <main>
+        <!-- banner picture -->
+        <div class="banner2 banner3">事業内容</div>
+        <!-- 今の位置 -->
+        <nav class="breadcrumb"  id="breadcrumb">
+            <div class="breadcrumb-content">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="flex items-center" onclick="jumpToIndex()">
+                            <i class="fa-solid fa-home movetop"></i>
+                            <span>ホーム</span>
+                        </a>
+                    </li>
+                    <span class="breadcrumb-separator">/</span>
+                    <!-- 动态生成的面包屑将插入这里 -->
+                </ol>
+            </div>
+        </nav>
+        <!-- <nav class="breadcrumb">
+            <div class="breadcrumb-content">
+                <a href='javascript:void(0);' onclick="jumpToIndex()"><i class="fa-solid fa-home movetop"></i>ホーム</a>
+                &gt;
+                <a href='./index.html#service-section'>事業内容</a> &gt;
+                <span>当社のサービス</span>
+            </div>
+        </nav> -->
+
+        <!-- 当社のサービス -->
+        <section class="form-solutions">
+            <h2>当社のサービス</h2>
+            <div class="service-card-grid">
+                <div id="" class="service-card drop-down"  data-path="service1">
+                    <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>デジタル戦略コンサルティング</h3>
+                            <p>お客様のビジネスに最適なデジタル戦略を策定します。市場分析から技術選定、ロードマップ作成まで一貫して支援します。</p>
+                        </div>
+                    <!-- <h3>システム開発</h3>
+                    <p>お客様のビジネスニーズに合わせたカスタムシステム開発を提供します。最新技術を活用した高品質なソリューションを実現します。</p> -->
+                </div>
+                <div id="" class="service-card drop-down" data-path="service2">
+                    <h3>インフラ構築</h3>
+                    <p>クラウド・オンプレミスを問わず、堅牢でスケーラブルなITインフラ構築サービスを提供します。</p>
+                </div>
+                <div id="" class="service-card drop-down" data-path="service3">
+                    <h3>AI・データ分析</h3>
+                    <p>デジタルトランスフォーメーションを支援し、ビジネスプロセスの革新と競争力強化を実現します。</p>
+                </div>
+                <div id="" class="service-card drop-down"  data-path="service4">
+                    <h3>ITコンサルティング</h3>
+                    <p>企業の経営観点から課題を洗い出し、高度なIT技術で業務効率化や業務改善などを提案する。</p>
+                </div>
+                <div id="" class="service-card drop-down" data-path="service5">
+                    <h3>システムエンジニアリング</h3>
+                    <p>各領域においての専門エンジニアを提供し、お客様に必要な期間だけのリソースを確保でき、コストを最小限に抑えられます。</p>
+                </div>
+                <div id="" class="service-card drop-down" data-path="service6">
+                    <h3>DX支援</h3>
+                    <p>主に新卒や若手社員に向けて、社会人としての基礎的なビジネスマナーや業務遂行に必要なスキルなどを身につけてもらうための研修を行います。</p>
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <button id="backToTop"><span>↑</span></button>
+
+    </main>
+
+
+    <!-- 底部导航 -->
+    <footer>
+        <!-- JS导入共用底部导航footer.html -->
+        <!-- <div id="footer-placeholder"></div> -->
+
+        <div class="footer-nav">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>会社情報</h3>
+                    <ul class="footer-links">
+                        <li><a href="./company.html#tab1">メッセージ</a></li>
+                        <li><a href="./company.html#tab2">会社概要</a></li>
+                        <li><a href="./company.html#tab3">会社沿革</a></li>
+                        <li><a href="./company.html#tab4">組織体制</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>事業内容</h3>
+                    <ul class="footer-links">
+                        <li><a href="./service.html">システム開発</a></li>
+                        <li><a href="./service.html">インフラ構築</a></li>
+                        <li><a href="./service.html">AI・データ分析</a></li>
+                        <li><a href="./service.html">ITコンサルティング</a></li>
+                        <li><a href="./service.html">エンジニア派遣</a></li>
+                        <li><a href="./service.html">DX支援</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>採用情報</h3>
+                    <ul class="footer-links">
+                        <li><a href="./recruit.html">新卒採用</a></li>
+                        <li><a href="./recruit.html">キャリア採用</a></li>
+                        <li><a href="./recruit.html">社員インタビュー</a></li>
+                        <li><a href="./recruit.html">パートナー募集</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>お問い合わせ</h3>
+                    <ul class="footer-links">
+                        <li><a href="./consult.html">お問い合わせフォーム</a></li>
+                        <li><a href="./consult.html">アクセス</a></li>
+                        <li><a href="./consult.html">プライバシーポリシー</a></li>
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p><i class="fa-solid fa-phone"></i>Tel：080-12345678</p>
+                <p><i class="fa-solid fa-envelope"></i>Mail：contact@qyt-llc.com</p>
+                <p>〒123-4567 東京都新宿区1-2-3</p>
+            </div>
+            <p>&copy; 2025 QYT合同会社 All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

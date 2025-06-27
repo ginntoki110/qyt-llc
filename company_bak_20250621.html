@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QYT合同会社</title>
+
+    <meta name="description" content="QYT合同会社の会社情報ページ。会社概要、メッセージ、沿革、組織体制などを掲載。">
+    <meta name="keywords" content="QYT合同会社, 会社情報, 会社概要, メッセージ, 沿革, 組織体制">
+
+    <link rel="icon" href="img/siteIcon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/siteIcon.jpg">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/company.css">
+    <link rel="stylesheet" href="./css/company-history.css">
+    <link rel="stylesheet" href="./css/company-orgniz.css">
+    <link rel="stylesheet" href="./css/company-detail.css">
+
+    <script src="./js/company.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/company-orgniz.js" defer></script>
+
+    <title> QYT合同会社</title>
+</head>
+
+<body>
+    <header>
+        <button id="menuToggle" class="menuToggle"> ☰</button>
+        <div id="menu" class="menu">
+            <button id="closeMenu" class="closeMenu">✖</button>
+            <nav class="nav-mobile">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href='javascript:void(0);' onclick="jumpToIndex()"><i class="fas fa-home movetop"></i> ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="current" href='javascript:void(0);' onclick="jumpToCompany()"><i class="fas fa-building"></i> 会社情報</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./company.html#tab1' onclick="doClick('tab1')">メッセージ</a></li>
+                            <li><a href='./company.html#tab2' onclick="doClick('tab2')">会社概要</a></li>
+                            <li><a href='./company.html#tab3' onclick="doClick('tab3')">会社沿革</a></li>
+                            <li><a href='./company.html#tab4' onclick="doClick('tab4')">組織体制</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item  "><a href='javascript:void(0);' onclick="jumpToService()"><i
+                                class="fas fa-laptop-code"></i>サービス</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./service.html#service1'>システム開発</a></li>
+                            <li><a href='./service.html#service2'>インフラ構築</a></li>
+                            <li><a href='./service.html#service3'>AI・データ分析</a></li>
+                            <li><a href='./service.html#service4'>ITコンサル</a></li>
+                            <li><a href='./service.html#service5'>セキュリティ対策</a></li>
+                            <li><a href='./service.html#service6'>DX支援</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpTorecruit()"><i
+                                class="fas fa-users"></i>採用情報</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./recruit.html#recruit1'>新卒採用</a></li>
+                            <li><a href='./recruit.html#recruit2'>中途採用</a></li>
+                            <li><a href='./recruit.html#recruit3'>社員インタビュー</a></li>
+                            <li><a href='./recruit.html#recruit4'>パートナー募集</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToconsult()"><i
+                                class="fas fa-envelope"></i>お問い合わせ</a>
+                        <span></span>
+                        <ul class="subnav-list">
+                            <li><a href='./consult.html#consult1'>お問い合わせフォーム</a></li>
+                            <li><a href='./index.html#consult-section'>アクセス</a></li>
+                            <li><a href='javascript:window.open("./privacy.html")'>プライバシーポリシー</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div id="overlay" class="overlay"></div>
+
+
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="QYT合同会社">
+                <div class="title">合同会社</div>
+            </div>
+
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToIndex()"><i
+                                class="fas fa-home movetop"></i> ホーム</a></li>
+                    <li class="nav-item"><a class="current" href='javascript:void(0);' onclick="jumpToCompany()"><i
+                                class="fas fa-building"></i> 会社情報</a>
+                        <ul class="subnav-list">
+                            <li><a href='./company.html#tab1' onclick="doClick('tab1')">メッセージ</a></li>
+                            <li><a href='./company.html#tab2' onclick="doClick('tab2')">会社概要</a></li>
+                            <li><a href='./company.html#tab3' onclick="doClick('tab3')">会社沿革</a></li>
+                            <li><a href='./company.html#tab4' onclick="doClick('tab4')">組織体制</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item  "><a href='javascript:void(0);' onclick="jumpToService()"><i
+                                class="fas fa-laptop-code"></i> サービス</a>
+                        <ul class="subnav-list">
+                            <li><a href='./service.html#service1'>システム開発</a></li>
+                            <li><a href='./service.html#service2'>インフラ構築</a></li>
+                            <li><a href='./service.html#service3'>AI・データ分析</a></li>
+                            <li><a href='./service.html#service4'>ITコンサル</a></li>
+                            <li><a href='./service.html#service5'>セキュリティ対策</a></li>
+                            <li><a href='./service.html#service6'>DX支援</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpTorecruit()"><i
+                                class="fas fa-users"></i> 採用情報</a>
+                        <ul class="subnav-list">
+                            <li><a href='./recruit.html#recruit1'>新卒採用</a></li>
+                            <li><a href='./recruit.html#recruit2'>中途採用</a></li>
+                            <li><a href='./recruit.html#recruit3'>社員インタビュー</a></li>
+                            <li><a href='./recruit.html#recruit4'>パートナー募集</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href='javascript:void(0);' onclick="jumpToconsult()"><i
+                                class="fas fa-envelope"></i>お問い合わせ</a>
+                        <ul class="subnav-list">
+                            <li><a href='./consult.html#consult1'>お問い合わせフォーム</a></li>
+                            <li><a href='./index.html#consult-section'>アクセス</a></li>
+                            <li><a href='javascript:window.open("./privacy.html")'>プライバシーポリシー</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </header>
+
+    <main class="">
+        <!-- banner picture -->
+        <div class="banner2">会社情報</div>
+        <!-- 今の位置 -->
+        <nav class="breadcrumb" id="breadcrumb">
+            <div class="breadcrumb-content">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="#" class="flex items-center" onclick="jumpToIndex()">
+                            <i class="fa-solid fa-home movetop"></i>
+                            <span>ホーム</span>
+                        </a>
+                    </li>
+                    <span class="breadcrumb-separator">/</span>
+                    <!-- 动态生成的面包屑将插入这里 -->
+                </ol>
+            </div>
+        </nav>
+        <!-- <nav class="breadcrumb">
+            <a href='javascript:void(0);' onclick="jumpToIndex()"><i class="fa-solid fa-home movetop"
+                    style="margin-right:1px;"></i></a> &gt;
+            <a href="./index.html#company-section">会社情報</a> &gt;
+            <span>会社沿革</span>
+        </nav> -->
+
+        <div class="card-container drop-down">
+            <div class="card-header">
+                <button class="card-tab-btn active" data-tab="tab1" data-path="tab1">メッセージ</button>
+                <button class="card-tab-btn" data-tab="tab2" data-path="tab2">会社概要</button>
+                <button class="card-tab-btn" data-tab="tab3" data-path="tab3">会社沿革</button>
+                <button class="card-tab-btn" data-tab="tab4" data-path="tab4">組織体制</button>
+            </div>
+            <div class="card-content-container">
+                <div class="card-content active" data-tab="tab1">
+                    <div class="ceo-section delay-3">
+                        <div class="ceo-section ">
+
+                            <div class="ceo-photo">
+                                <img src="./img/ceo.jpg" alt="社長写真">
+                            </div>
+                            <div class="divider"></div>
+                            <div class="ceo-name">代表社員/CEO  屈 云騰</div>
+                            <div class="ceo-signature">Yunteng.Qu</div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <p class="highlight">✅仕事を楽しむ</p>
+                    <hr>
+                    <p>人生の約 60% を占める仕事は、単なる生計手段ではなく、「生き方の実現場」です。当社は「明確な目標設定→成果共有→喜びの共有」を軸に、社員一人ひとりが仕事の本質的な楽しさを体感できる環境整備に取り組んでいます。もし業務遂行にストレスが蓄積した場合、組織として原因分析を徹底し、業務フローの見直しやメンタリングサポートを提供することを当然の責務と位置付けています。心の健康な社員こそが、チームパフォーマンスと 最高の成果（Yield） を生む源泉です。
+                    </p>
+
+                    <br>
+                    <p class="highlight">✅成長し続ける</p>
+                    <hr>
+                    <p>企業も個人も、学び続ける意志が未来を拓きます。当社は「人材育成 = 企業価値向上」を信条とし、新卒社員から中高年層まで、キャリアパスの多様化（技術職・管理職・プロジェクトリーダー等）とスキルアッププログラムを体系的に提供しています。例えば、毎年度実施する「キャリア相談会」や「海外研修制度」は、社員が中年以降も専門性を磨き続けられるように設計されています。収益性と人間性を兼ね備えた経営を目指しています。
+                    </p>
+                    <br>
+                    <p class="highlight">✅信頼を守り抜く</p>
+                    <hr>
+                    <p>会社の発展と社員の幸福は、何よりもお客様からの深い信頼（Trust）の上に成り立っています。私たちは、お客様の一人ひとりの声に真摯に耳を傾け、不断の品質向上 に努めます。短期的な利益に振り回されず、お客様への約束とサービスの品質（Quality） を守り抜く。お預かりした信頼に応え続けること─それが私たちの 誇りであり、全社員が共有する責任 です。
+                    </p>
+
+                    <br>
+                    <p class="highlight">✅好循環を創出</p>
+                    <hr>
+                    <p>私たちは、社員一人ひとりが自分の可能性を最大限に発揮できる環境を提供し、共に成長し続けることを目指しています。社員個人の成功が会社の成果となり、さらには社会貢献へとつながる好循環の創出です。すべての原点は「人」にあります。社員の幸福を守り支えることこそが、当社が社会に存在する意義であり、使命であると考えます。
+                    </p>
+
+                    <br>
+                    <p>これからも、顧客と社員と共に歩み続け、より良い未来を築いていきます。</p>
+
+                    <div class="logo-section">
+                        <img src="./img/logo.png" alt="logo">
+                        
+                    </div>
+
+                </div>
+                <div class="card-content" data-tab="tab2">
+                    <div class="company-detail-content">
+                        <div class="detail-section">
+                            <h2>会社概要</h2>
+                            <div class="company-info-grid">
+                                <div class="info-card">
+                                    <h3>基本情報</h3>
+                                    <p><strong>会社名</strong><br>QYT合同会社</p>
+                                    <p><strong>設立</strong><br>2025年7月1日</p>
+                                    <p><strong>資本金</strong><br>100万円</p>
+                                    <p><strong>代表者</strong><br>代表社員/CEO  屈 云騰</p>
+                                </div>
+                                <div class="info-card">
+                                    <h3>事業内容</h3>
+                                    <ul>
+                                        <li>デジタル戦略コンサルティング</li>
+                                        <li>ITシステム開発・運用</li>
+                                        <li>クラウドソリューション</li>
+                                        <li>AI・データ分析サービス</li>
+                                        <li>サイバーセキュリティ対策</li>
+                                        <li>デジタルトランスフォーメーション支援</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h3>主要取引先</h3>
+                                    <ul>
+                                        <li>大手金融機関</li>
+                                        <li>製造業大手</li>
+                                        <li>小売・流通企業</li>
+                                        <li>医療機関・製薬会社</li>
+                                        <li>官公庁・自治体</li>
+                                        <li>スタートアップ企業</li>
+                                    </ul>
+                                </div>
+                                <div class="info-card">
+                                    <h3>認証・資格 </h3>
+                                    <ul>
+                                        <li>ISO 27001 認証</li>
+                                        <li>プライバシーマーク</li>
+                                        <li>AWS パートナー</li>
+                                        <li>Microsoft ゴールドパートナー</li>
+                                        <li>Google Cloud パートナー</li>
+                                    </ul>
+                                    ※計画中
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h2>経営理念</h2>
+                            <div class="info-card">
+                                <h3>ミッション</h3>
+                                <p>テクノロジーと知見で、お客様のDXを実現し、社会の発展に貢献します。</p>
+
+                                <h3>ビジョン</h3>
+                                <p>最先端テクノロジーと卓越した知見を融合し、社会の変革を牽引するイノベーションパートナーとなる。</p>
+
+                                <h3>価値観</h3>
+                                <p>Quality・Yield・Trust（品質・成果・信頼）を軸に行動します。</p>
+                                <ul>
+                                    <li><strong>革新</strong> - 常に新しい価値を追求</li>
+                                    <li><strong>誠実</strong> - 一つひとつの案件に誠実に向き合い、品質と納期を厳守</li>
+                                    <li><strong>共創</strong> - お客様と共に成長</li>
+                                    <li><strong>成果主義</strong> - 確かな成果で信頼を構築</li>
+                                    <li><strong>社会貢献</strong> - 技術で社会課題を解決</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        
+                        <div class="detail-section">
+                            <h2>アクセス</h2>
+                            <div class="access-info">
+                            <div class="access-details">
+                                <div class="access-detail">
+                                    <div class="access-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h3>所在地</h3>
+                                        <p>〒160-0022<br>東京都新宿区新宿1-2-3<br>新宿センタービル 15階</p>
+                                    </div>
+                                </div>
+                                <div class="access-detail">
+                                    <div class="access-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h3>電話番号</h3>
+                                        <p>03-1234-5678</p>
+                                    </div>
+                                </div>
+                                <div class="access-detail">
+                                    <div class="access-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h3>メールアドレス</h3>
+                                        <p>contact@qyt-llc.com</p>
+                                    </div>
+                                </div>
+                                <div class="access-detail">
+                                    <div class="access-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div>
+                                        <h3>営業時間</h3>
+                                        <p>月曜日〜金曜日<br>9:00〜18:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#contact" class="btn">お問い合わせ</a>
+                        </div>
+                            <p><strong>〒160-0022 東京都新宿区新宿1-2-3 新宿センタービル 15階</strong></p>
+                            <p>JR新宿駅南口より徒歩5分<br>都営新宿線新宿駅A1出口より徒歩3分</p>
+                            <div class="map-container">
+                                <!-- ここにGoogleマップが入ります -->
+                                <div
+                                    style="width:100%;height:100%;background:#e9ecef;display:flex;align-items:center;justify-content:center;">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13012.376393008453!2d139.576793114435!3d35.37812208613953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60184496311bb271%3A0x2e990367680394f3!2sYokodai%2C%20Isogo%20Ward%2C%20Yokohama%2C%20Kanagawa%20235-0045%2C%20Japan!5e0!3m2!1sen!2sus!4v1746665135942!5m2!1sen!2sus"
+                                        class="map-company" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-content" data-tab="tab3">
+                    <div class="history-section">
+                        <h3 class="history-title"><i class="fa-solid fa-timeline"
+                                style="color:#007acc;margin-right:8px;font-size:larger ;"></i>会社沿革＆５年計画</h3>
+                        <div class="timeline" id="company-timeline">
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025年4月</span>
+                                <span class="timeline-text">事業企画を着手。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025年5月</span>
+                                <span class="timeline-text">一人社長よりホームページを作成。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025年6月</span>
+                                <span class="timeline-text">QYT合同会社を設立、ホームページを初リリース。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025年7月</span>
+                                <span class="timeline-text">社員募集を開始</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2025年12月</span>
+                                <span class="timeline-text">セキュリティ対策事業を拡大、社員数を10名に増員。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2026年1月</span>
+                                <span class="timeline-text">NRI様との取引を開始。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2026年2月</span>
+                                <span class="timeline-text">日立ソリューションズ様との取引を開始。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2026年6月</span>
+                                <span class="timeline-text">一期目決算、売上高１億円に達成。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2026年12月</span>
+                                <span class="timeline-text">セキュリティ対策事業を拡大、社員数を50名に増員。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2027年1月</span>
+                                <span class="timeline-text">一次請負案件受注を開始。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2027年6月</span>
+                                <span class="timeline-text">二期目決算、売上高１０億円に達成。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2028年1月</span>
+                                <span class="timeline-text">自社プロダクト開発を開始。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2028年6月</span>
+                                <span class="timeline-text">三期目決算、売上高５０億円に達成。</span>
+                            </div>
+                            <div class="timeline-item future">
+                                <span class="timeline-year">2029年1月</span>
+                                <span class="timeline-text">自社プロダクトをリリース。</span>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-year">2029年6月</span>
+                                <span class="timeline-text">四期目決算、売上高１００億円に達成。</span>
+                            </div>
+                            <div class="timeline-item future">
+                                <span class="timeline-year">2030年6月</span>
+                                <span class="timeline-text">五期目決算、売上高２００億円に達成。</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-content wider" data-tab="tab4">
+                    <h3 class="org-chart-title"><i class="fa-solid fa-sitemap"
+                            style="color:#007acc;margin-left:30px;"></i>&nbsp;組織構成図
+                    </h3>
+                    <div class="container">
+                        <div class="org-controls">
+                            <button class="control-btn" id="zoomInBtn">
+                                <i class="fas fa-search-plus"></i> <span>拡大</span>
+                            </button>
+                            <button class="control-btn" id="zoomOutBtn">
+                                <i class="fas fa-search-minus"></i> <span>縮小</span>
+                            </button>
+                            <button class="control-btn" id="resetZoomBtn">
+                                <i class="fas fa-sync-alt"></i> <span>リセット</span>
+                            </button>
+                            <div class="search-container">
+                                <input type="text" id="deptSearch" placeholder="部署を検索...">
+                                <button id="searchBtn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="org-chart-container">
+                            <div class="org-chart" id="orgChart">
+                                <div class="tree">
+                                    <!-- 代表取締役社長 -->
+                                    <div class="node ceo">
+                                        <i class="fa-solid fa-user-tie icon"></i>
+                                        <div class="node-title">代表取締役社長</div>
+                                        <div class="node-name">屈 云騰</div>
+                                    </div>
+
+                                    <!-- 直属部門 -->
+                                    <div class="children multiple-children">
+                                        <div class="child-node">
+                                            <div class="node management">
+                                                <i class="fa-solid fa-users-gear icon"></i>
+                                                <div class="node-title">管理部</div>
+                                                <div class="node-desc">人事・総務<br>経理・財務</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="child-node">
+                                            <div class="node sales">
+                                                <i class="fa-solid fa-handshake icon"></i>
+                                                <div class="node-title">営業部</div>
+                                                <div class="node-desc">法人営業<br>マーケティング</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="child-node">
+                                            <div class="node development">
+                                                <i class="fa-solid fa-laptop-code icon"></i>
+                                                <div class="node-title">開発本部</div>
+                                                <div class="node-desc">システム開発<br>品質保証</div>
+                                            </div>
+
+                                            <!-- 開発本部の子部門 -->
+                                            <div class="children multiple-children">
+                                                <div class="child-node">
+                                                    <div class="node">
+                                                        <i class="fa-solid fa-code icon"></i>
+                                                        <div class="node-title">システム開発部</div>
+                                                        <div class="node-desc">Web、モバイル<br>クラウド</div>
+                                                    </div>
+
+                                                    <!-- システム開発部の子部門 - 完全連結 -->
+                                                    <div class="children multiple-children">
+                                                        <div class="child-node">
+                                                            <div class="node">
+                                                                <i class="fa-solid fa-globe icon"></i>
+                                                                <div class="node-title">Webアプリ開発課</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="child-node">
+                                                            <div class="node">
+                                                                <i class="fa-solid fa-mobile-screen icon"></i>
+                                                                <div class="node-title">モバイル開発課</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="child-node">
+                                                            <div class="node">
+                                                                <i class="fa-solid fa-cloud icon"></i>
+                                                                <div class="node-title">インフラ・クラウド課</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="child-node">
+                                                    <div class="node">
+                                                        <i class="fa-solid fa-vial icon"></i>
+                                                        <div class="node-title">品質保証部</div>
+                                                        <div class="node-desc">テスト・QA</div>
+                                                    </div>
+
+                                                    <!-- 品質保証部の子部門（単一子ノード） -->
+                                                    <div class="children">
+                                                        <div class="child-node">
+                                                            <div class="node">
+                                                                <i class="fa-solid fa-bug icon"></i>
+                                                                <div class="node-title">テスト・QA課</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="child-node">
+                                                    <div class="node">
+                                                        <i class="fa-solid fa-rocket icon"></i>
+                                                        <div class="node-title">AI・データ分析部</div>
+                                                        <div class="node-desc">デジタルトランスフォーメーション</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="child-node">
+                                            <div class="node technology">
+                                                <i class="fa-solid fa-flask icon"></i>
+                                                <div class="node-title">技術推進室</div>
+                                                <div class="node-desc">R&D<br>技術教育</div>
+                                            </div>
+
+                                            <!-- 技術推進室の子部門 -->
+                                            <div class="children multiple-children">
+                                                <div class="child-node">
+                                                    <div class="node">
+                                                        <i class="fa-solid fa-microscope icon"></i>
+                                                        <div class="node-title">R&D</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="child-node">
+                                                    <div class="node">
+                                                        <i class="fa-solid fa-graduation-cap icon"></i>
+                                                        <div class="node-title">技術教育</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="explanation-box">
+                            <h3><i class="fas fa-info-circle"></i> 組織図の見方</h3>
+                            <ul>
+                                <li>ズームや検索が可能です</li>
+                                <li>部署名をクリックすると詳細情報が表示されます</li>
+                                <li>横線の長さは動的に計算されています</li>
+                                <li>※一部は計画中</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- モーダル -->
+                    <div class="modal" id="departmentModal">
+                        <div class="modal-content">
+                            <span class="close-modal" id="closeModal">&times;</span>
+                            <div class="modal-header">
+                                <h2 id="modalTitle">部署詳細情報</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="department-info">
+                                    <div class="department-icon">
+                                        <i id="modalIcon" class="fa-solid fa-building"></i>
+                                    </div>
+                                    <div class="department-details">
+                                        <h3 id="modalDeptName">管理部</h3>
+                                        <p id="modalDescription">人事・総務、経理・財務を担当する部署です。</p>
+                                    </div>
+                                </div>
+                                <div class="department-stats">
+                                    <div class="stat-box">
+                                        <div class="stat-value" id="modalStaff">12</div>
+                                        <div class="stat-label">スタッフ数</div>
+                                    </div>
+                                    <div class="stat-box">
+                                        <div class="stat-value" id="modalProjects">8</div>
+                                        <div class="stat-label">担当プロジェクト</div>
+                                    </div>
+                                    <div class="stat-box">
+                                        <div class="stat-value" id="modalYears">5</div>
+                                        <div class="stat-label">平均経験年数</div>
+                                    </div>
+                                    <div class="stat-box">
+                                        <div class="stat-value" id="modalSatisfaction">92%</div>
+                                        <div class="stat-label">満足度</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <button id="backToTop"><span>↑</span></button>
+
+    </main>
+    <div class="button-container">
+        <button class="button1" type="button" onclick="window.history.back();">戻る</button>
+    </div>
+
+    <!-- 底部导航 -->
+    <footer>
+        <!-- JS导入共用底部导航footer.html -->
+        <!-- <div id="footer-placeholder"></div> -->
+
+        <div class="footer-nav">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>会社情報</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">メッセージ</a></li>
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#">会社沿革</a></li>
+                        <li><a href="#">組織体制</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>事業内容</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">システム開発</a></li>
+                        <li><a href="#">インフラ構築</a></li>
+                        <li><a href="#">AI・データ分析</a></li>
+                        <li><a href="#">ITコンサルティング</a></li>
+                        <li><a href="#">DX支援</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>採用情報</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">新卒採用</a></li>
+                        <li><a href="#">キャリア採用</a></li>
+                        <li><a href="#">社員インタビュー</a></li>
+                        <li><a href="#">パートナー募集</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>お問い合わせ</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">お問い合わせフォーム</a></li>
+                        <li><a href="#">アクセス</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            
+            <div class="footer-info">
+                <p><i class="fa-solid fa-phone"></i>Tel：080-12345678</p>
+                <p><i class="fa-solid fa-envelope"></i>Mail：contact@qyt-llc.com</p>
+                <p><i class="fas fa-map-marker-alt"></i>〒123-4567 東京都新宿区1-2-3</p>
+            </div>
+            <p>&copy; 2025 QYT合同会社 All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

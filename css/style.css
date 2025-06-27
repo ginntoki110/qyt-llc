@@ -1,0 +1,847 @@
+.intro-screen .image-box-intro {
+    display: inline-block;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.intro-screen .image-box-intro img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.fade-inn {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.fade-inn.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.fade-inn.delay-2 {
+    animation-delay: 2s;
+}
+
+.fade-inn.delay-3 {
+    animation-delay: 3.5s;
+}
+
+.fade-inn.delay-4 {
+    animation-delay: 5s;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.logoTop {
+    background-color: transparent;
+    width: 100%;
+    /* height: 70px; */
+    margin-top: 0;
+    margin: 0, auto;
+
+}
+
+.logoTop img {
+    width: 55px;
+    height: 55px;
+    margin-top: 5px;
+    /* margin: 0, auto; */
+}
+
+
+
+
+.banner {
+    background-image: url(../img/welcome.gif);
+    background-size: cover;
+    background-position: center;
+
+    margin: 10px, 0px;
+    height: 0px;
+    width: 100%;
+
+    /* display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    color: white;
+    font-size: 2em; */
+}
+
+
+section {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*垂直顺序依次排列，空行在后*/
+    align-items: center;
+    /*水平居中*/
+}
+
+
+.content {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* 水平分布 */
+    align-items: top;
+    /* 垂直居中 */
+    /* border-radius:0.5%; */
+    /* border:red 1px solid; */
+
+}
+
+.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.content img {
+    vertical-align: top;
+    /*需要图片和文字一起排列（不想用 block）*/
+    /* 不超过容器宽度 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 自动按比例缩放高度 */
+    /*display: block; */
+    /* 去除底部空隙（避免被当作行内元素）图片会变成“块级元素”，脱离文本流，就不会被其他行内元素干扰 */
+    /* margin: 0 auto;   可选：居中 */
+    border-radius: 2%;
+
+}
+
+/*容器控制更稳定*/
+.image-box {
+    max-width: 50%;
+    max-height: 450px;
+    width: 600px;
+    height: auto;
+    overflow: visible;
+    /*防止超出部分显示出来，而是直接裁剪掉溢出的部分*/
+    margin: 0, 10px;
+}
+
+.content2 {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 1em;
+    max-height: 500px;
+    /* 限制最大高度 */
+    overflow: auto;
+    /* 超出部分滚动显示 */
+
+    /* margin: 50px,10px; */
+    /* border:#ee81df 1px solid; */
+    /* border-radius: 2%; */
+}
+
+.content2 p {
+    font-size: 1em;
+    line-height: 1.8em;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.content2 p.title {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.map {
+    max-width: 600px;
+    max-height: 600px;
+    height: 40vh;
+    width: 50vw;
+    border: 0;
+}
+
+.map-company {
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+.consult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 横向居中 */
+    justify-content: center;
+    /* 纵向居中（可选） */
+    text-align: left;
+    /* 文本居中 */
+    margin: 0 auto;
+}
+
+
+
+
+
+/* h1:hover {
+    color: white;
+    cursor: auto;
+    background-color: black;
+
+    background-image: url(../img/logo3.png);
+    background-repeat: no-repeat;
+    background-position: 2vw 0vh;
+    background-size: 60px;
+} */
+
+
+h2.title {
+    width: 6em;
+    height: 2em;
+    line-height: 2em;
+
+    color: white;
+    background: red;
+    /* color: red;
+    background:white ; */
+
+    box-shadow: 3px 3px 5px #666, -3px -3px 5px #fff;
+    /* 立体阴影 */
+    border-radius: 5px;
+    /* 圆角（可选） */
+    text-align: center;
+
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+h2.title::after {
+    position: absolute;
+    content: "";
+    left: 0%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+h2.title:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+h2.title:hover {
+    cursor: pointer;
+}
+
+.consult h3 {
+    position: relative;
+    height: 20px;
+    background-color: transparent;
+    padding: 2px;
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+footer {
+    /* background-color: #333; */
+    color: black;
+    width: 100%;
+    border: #fff 20px solid;
+    padding: 10px 0px;
+    text-align: left;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+blockquote {
+    padding: 2em 0em;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+}
+
+blockquote p {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+abbr {
+    font-size: 2.5em;
+    color: rgb(255, 0, 0);
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+.button-container {
+    /* width: 50%; */
+    /* margin-left: 0%; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+    /* margin-left: 0%; */
+    /* border:#ee81df 1px solid; */
+    /* border-radius: 2%; */
+}
+
+.button1 {
+    height: 2.5em;
+    width: 6em;
+    border: #ffffff 1px solid;
+    border-radius: 2px;
+    font-size: 1em;
+}
+
+.button1:hover {
+    cursor: pointer;
+    background: white;
+    box-shadow: 0px 5px 10px black;
+    /* 立体阴影 */
+}
+
+
+.button2 {
+    height: 3.5em;
+    width: 8em;
+    padding: 0.5em;
+    margin: 10px 0;
+    /* box-shadow: 0px 5px 10px black; */
+    border: #ffffff 1px solid;
+    border-radius: 10em;
+    font-size: small;
+    color: white;
+    background-color: #0d2523;
+}
+
+.button2:hover {
+    cursor: pointer;
+    background-color: rgb(150, 49, 49);
+    /* box-shadow: 0px 5px 10px black; */
+    /* 立体阴影 */
+}
+
+
+form {
+    background: rgba(20, 36, 36, 0.85);
+    /* 深色半透明背景 */
+    color: #fff;
+    /* 明亮字体 */
+    width: 100%;
+    max-width: 900px;
+    padding: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    line-height: 2.2em;
+    font-size: 1.1em;
+    border: none;
+}
+
+form .counter {
+    width: 10%;
+    /* display: flex; */
+    margin-left: 1em;
+    font-size: 0.5em;
+    color: rgb(255, 255, 255, 0.5);
+    /* background-color: #dadc61; */
+    white-space: nowrap;
+    font-style: italic;
+}
+
+
+form label {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    font-family: sans-serif;
+    font-size: 0.8em;
+    color: #ffffff;
+
+}
+
+.require {
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    background-color: rgb(197, 69, 69);
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    margin-right: 8px;
+}
+
+.free {
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    background-color: rgb(139, 133, 133);
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    margin-right: 8px;
+}
+
+form input,
+form select,
+form textarea {
+    max-width: 450px;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 1em;
+
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 0px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c2a2a;
+    border: none;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+form textarea {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    resize: none;
+    /* 禁止缩放 */
+}
+.error-message {
+    display: none;
+    color: rgb(218, 133, 133);
+    font-size: 0.8rem;
+    /* font-family: sans-serif; */
+    /* margin-top: 10px; */
+    margin-left: 0.5em;
+    line-height: 1rem;
+}
+
+
+input::placeholder,
+textArea::placeholder {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+}
+
+input:focus,
+textarea:focus {
+    background-color: #f6f8e1;
+    outline: none;
+    border: 1px solid #f0ec64d9;
+}
+
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    font-family: sans-serif;
+    flex: 1;
+    padding: 1px;
+    font-size: 1em;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+}
+
+.file-input {
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #2c2a2a;
+    border-radius: 5px;
+    border: none;
+}
+
+
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    /* 水平排列 */
+    align-items: center;
+}
+
+.checkbox input {
+    width: 20px;
+    margin-right: 5px;
+    /* 控制间距 */
+}
+
+.checkbox label {
+    width: auto;
+    font-size: 0.8em;
+    color: #ffffff;
+    margin-left: 5px;
+    /* 控制间距 */
+    padding: 0;
+    margin: 0;
+}
+
+.checkbox a {
+    font-size: 0.8em;
+    color: #ffffff;
+    text-decoration: underline;
+    /* cursor: pointer; */
+}
+
+/*弹窗*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-consult {
+    top: 10vh;
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    height: 40%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+
+
+/* 回到顶部按钮样式 */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* 红酒倒入效果 */
+#backToTop::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: red;
+    transition: height 0.6s ease;
+    z-index: 1;
+}
+
+#backToTop:hover::after {
+    height: 100%;
+}
+
+/* 箭头样式改进：箭头变白 */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 999;
+    overflow: hidden;
+}
+
+#backToTop::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: red;
+    transition: height 0.6s ease;
+    z-index: 1;
+}
+
+#backToTop.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 出现时直接填满红色 */
+#backToTop.show::after {
+    height: 100%;
+}
+
+#backToTop:hover::after {
+    height: 0%;
+}
+
+#backToTop span {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    font-size: 28px;
+    color: white;
+    transition: color 0.6s ease, transform 0.4s ease;
+}
+
+#backToTop:hover span {
+    color: red;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* 响应式设计 */
+/* 手机或小屏幕设备的样式 */
+
+@media (max-width: 868px) {
+
+    /* 只隐藏桌面导航 */
+    .nav-desktop {
+        display: none !important;
+    }
+
+    /* 汉堡按钮 */
+    .menuToggle {
+        display: block !important;
+    }
+
+    /* 调整关闭按钮样式 */
+    .closeMenu {
+        color: #333;
+        z-index: 1003;
+    }
+
+    .nav-mobile {
+        width: 100%;
+    }
+
+    /* 导航栏-移动端 */
+    .nav-mobile .nav-list {
+        flex-direction: column;
+        margin-top: 5rem;
+        gap: 20px;
+    }
+
+    .nav-mobile a {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+
+    /* 导航栏子菜单-移动端 */
+    .nav-mobile .nav-item .subnav-list {
+        background-color: rgba(249, 247, 247, 0.5);
+        opacity: 1;
+        position: static;
+        /* 取消绝对定位 */
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        /* transition: max-height 0.3s; */
+    }
+
+    .nav-mobile .nav-item .on+.subnav-list,
+    .nav-mobile .nav-item .subnav-list.active {
+        display: block;
+    }
+
+    /* .nav-mobile .nav-item .subnav-list a {
+        display: none;
+    } */
+
+    .nav-mobile .nav-list li span {
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url(../img/icon01.png) no-repeat center center / 15px;
+        /* transition: all 0.5s ease-in-out; */
+    }
+
+    .nav-mobile .nav-list li span.on {
+        background: url(../img/icon02.png) no-repeat center center / 15px;
+    }
+
+  
+    .banner {
+        height: 0vh;
+        /* overflow: hidden; */
+        width: 100%;
+    }
+
+    .company {
+        display: flex;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .content img {
+        max-width: 100%;
+        /* 不超过容器宽度 */
+        height: auto;
+        /* 自动按比例缩放高度 */
+        display: block;
+        /* 去除底部空隙（避免被当作行内元素）图片会变成“块级元素”，脱离文本流，就不会被其他行内元素干扰 */
+        margin: 0 auto;
+        /* 可选：居中 */
+        /* 图片缩放至最大 填充整个容器 */
+        /* width: 100%; */
+        /* height: 100%; */
+        object-fit: fill;
+        /* 使图片保持比例填充整个容器 */
+    }
+
+    /*容器控制更稳定*/
+    .image-box {
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+        /*防止超出部分显示出来，而是直接裁剪掉溢出的部分*/
+        margin: 1em 0;
+        border-radius: 5%;
+    }
+
+    .content2 {
+        width: 100%;
+        padding: 0;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 1em 0;
+        max-height: none;
+
+    }
+
+    .map {
+        max-width: 100vw;
+        max-height: 600px;
+        height: 40vh;
+        width: 100%;
+        border: 0;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+
+    h2.title {
+        margin-bottom: 0.5em;
+    }
+
+    blockquote {
+        padding: 1em 0em;
+        font-size: 0.8em;
+        font-style: italic;
+        text-align: center;
+    }
+
+    form textarea {
+        height: 200px;
+    }
+
+
+
+    .announcement-section {
+        height: 180px;
+    }
+
+    .announcement-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .announcement-content p {
+        font-size: 1rem;
+    }
+
+    footer {
+        border: none;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr; 
+        /* 只显示两列*/
+    }
+
+    .solutions-container {
+        grid-template-columns: 1fr;
+    }
+
+}

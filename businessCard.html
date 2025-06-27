@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QYT合同会社 名刺</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* 名刺サイズ: 91mm x 55mm */
+    @page {
+      size: 91mm 55mm;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .card {
+      width: 91mm;
+      height: 55mm;
+      padding: 5mm 8mm;
+      box-sizing: border-box;
+      /* border: 1px solid black; */
+      background-color: #ffffff;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+      position: relative;
+      color: #262626;
+    }
+
+
+    .company {
+      margin-top: 3mm;
+      font-size: 15pt;
+      font-weight: bold;
+    }
+
+    .furikana {
+      font-size: 7pt;
+      margin-top: 3mm;
+      margin-left: 28mm;
+      line-height: 1;
+    }
+    .name {
+      font-size: 10pt;
+      margin-top: 0mm;
+      line-height: 1.4;
+    }
+    
+    .contact {
+      font-size: 8.5pt;
+      margin-top: 7mm;
+      line-height: 1.4;
+    }
+
+    .logo {
+      width: 20mm;
+      height: auto;
+      position: absolute;
+      top: 2mm;
+      right: 4mm;
+    }
+
+    .qr {
+      width: 18mm;
+      height: 18mm;
+      position: absolute;
+      bottom: 8mm;
+      right: 5mm;
+    }
+
+    .service {
+      /* border-top: 3px solid rgb(249, 44, 44); */
+      color: #ffffff;
+      width: 100%;
+      /* background-color: #0d0df8; */
+      background-color: #03231b;
+      font-size: 7pt;
+      position: absolute;
+      bottom: 0mm;
+      left: 0mm;
+      padding: 1mm 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <!-- ロゴ画像 (QYTロゴ) -->
+    <img class="logo" src="./img/logo.png" alt="QYTロゴ">
+
+
+    <!-- 会社名 -->
+    <div class="company">QYT合同会社</div>
+    <!-- 担当者名と役職 -->
+     <div class="furikana">
+       くつ&nbsp;&nbsp;&nbsp;うんとう
+     </div>
+    <div class="name">
+      代表社員 / 社長　屈　云騰
+    </div>
+
+    <!-- 連絡先情報 -->
+    <div class="contact">
+      <i class="fa-solid fa-phone"></i> 080-8022-7370<br>
+      <i class="fa-solid fa-envelope"></i> contact@qyt-llc.com <br>
+      <i class="fa-solid fa-search"></i> https://www.qyt-llc.com</div>
+
+    <!-- ウェブサイトQRコード -->
+    <!-- <img class="qr" src="./img/QRcode.png" alt="公式サイトQRコード"> -->
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.qyt-llc.com"
+      alt="QR Code">
+
+    <div class="service">
+      　　信頼を築くのは、確かな成果だけ。ぜひ一度、お任せください！
+    </div>
+  </div>
+
+</body>
+
+</html>

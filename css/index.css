@@ -1,0 +1,43 @@
+.intro-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    z-index: 2000;
+    /* 增加这一行 */
+}
+
+.body-content {
+    display: none;
+    /* 默认隐藏主页内容 */
+    background-color: #fff;
+    color: #333;
+}
+
+.slogan {
+    font-size: 3em;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-family: "Arial", sans-serif;
+    line-height: 5.5em;
+    /* 行高 */
+    /* 画面上部显示 */
+    position: absolute;
+    top: 25%;
+}
+
+
+@media (max-width: 768px) {
+
+    .slogan {
+        font-size: 1.5em;
+        /* 字体大小 */
+    }
+}

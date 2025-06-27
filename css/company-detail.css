@@ -1,0 +1,403 @@
+        :root {
+          --primary: #1a3a5f;
+          --secondary: #2c5282;
+          --accent: #007acc;
+          --light: #f5f7fa;
+          --dark: #333333;
+          --gray: #6c757d;
+          --white: #ffffff;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          --transition: all 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-weight: 700;
+          line-height: 1.3;
+          margin-bottom: 1rem;
+        }
+
+        .container {
+          width: 100%;
+          /* max-width: 1200px; */
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 12px 30px;
+          background: var(--accent);
+          color: var(--white);
+          text-decoration: none;
+          border-radius: 30px;
+          font-weight: 500;
+          transition: var(--transition);
+          border: none;
+          cursor: pointer;
+          text-align: center;
+        }
+
+        .btn:hover {
+          background: var(--secondary);
+          transform: translateY(-3px);
+          box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+          background: transparent;
+          border: 2px solid var(--accent);
+          color: var(--accent);
+        }
+
+        .btn-outline:hover {
+          background: var(--accent);
+          color: var(--white);
+        }
+
+        section {
+          padding: 80px 0;
+        }
+
+        .section-title {
+          text-align: center;
+          margin-bottom: 60px;
+          position: relative;
+        }
+
+        .section-title::after {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80px;
+          height: 4px;
+          background: linear-gradient(to right, var(--accent), #00b4d8);
+          border-radius: 2px;
+        }
+
+
+        /* 会社概要 */
+        .company-overview {
+          background-color: var(--white);
+        }
+
+        .overview-content {
+          display: flex;
+          gap: 50px;
+          align-items: center;
+        }
+
+        .overview-text {
+          flex: 1;
+        }
+
+        .overview-image {
+          flex: 1;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: var(--shadow);
+        }
+
+        .overview-image img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+
+        .overview-image:hover img {
+          transform: scale(1.05);
+        }
+
+        /* サービス */
+        .services {
+          background-color: var(--light);
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+        }
+
+        .service-card {
+          background: var(--white);
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: var(--shadow);
+          transition: var(--transition);
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+          height: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, var(--primary), var(--secondary));
+          color: var(--white);
+          font-size: 4rem;
+        }
+
+        .service-content {
+          padding: 25px;
+        }
+
+        .service-content h3 {
+          margin-bottom: 15px;
+          color: var(--primary);
+        }
+
+        /* 会社の強み */
+        .strengths {
+          background-color: var(--white);
+        }
+
+        .strengths-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+          text-align: center;
+        }
+
+        .strength-item {
+          padding: 30px 20px;
+          border-radius: 15px;
+          background: var(--light);
+          transition: var(--transition);
+        }
+
+        .strength-item:hover {
+          background: var(--primary);
+          color: var(--white);
+        }
+
+        .strength-item:hover h3,
+        .strength-item:hover .strength-icon {
+          color: var(--white);
+        }
+
+        .strength-icon {
+          font-size: 3rem;
+          color: var(--accent);
+          margin-bottom: 20px;
+          transition: var(--transition);
+        }
+
+        .strength-item h3 {
+          margin-bottom: 15px;
+        }
+
+        /* アクセス */
+        /* .access {
+          background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.9)),
+            url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+          background-size: cover;
+          background-position: center;
+          color: var(--white);
+          text-align: center;
+        }
+
+        .access h2,
+        .access .section-title::after {
+          color: var(--white);
+          background: var(--white);
+        }
+
+        .access-info {
+          max-width: 700px;
+          margin: 0 auto;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          padding: 40px;
+          border-radius: 15px;
+        }
+
+        .access-details {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          text-align: left;
+          margin-bottom: 30px;
+        }
+
+        .access-detail {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .access-icon {
+          font-size: 1.5rem;
+          color: var(--accent);
+        } */
+
+
+
+        /* 会社詳細ページ */
+        /* .company-header {
+          background: linear-gradient(135deg, var(--primary), var(--secondary));
+          color: var(--white);
+          padding: 100px 0 50px;
+          text-align: center;
+        }
+
+        .company-header h1 {
+          color: var(--white);
+          font-size: 2.8rem;
+          margin-bottom: 20px;
+        } */
+
+        .company-detail {
+          background-color: var(--white);
+          padding: 80px 0;
+        }
+
+        .company-detail-content {
+          width: 100%;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        .company-detail-content li {
+          margin-left: 1.5rem;
+          margin-bottom: 0.5rem;
+
+        }
+
+        .company-detail-content p {
+          margin-bottom: 0.5rem;
+
+        }
+
+        .detail-section {
+          width: 100%;
+          margin-bottom: 60px;
+        }
+
+        .detail-section h2 {
+          margin-bottom: 30px;
+          padding-bottom: 15px;
+          border-bottom: 2px solid var(--light);
+        }
+
+        .company-info-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 30px;
+        }
+
+        .info-card {
+          width: 100%;
+          background: var(--light);
+          border-radius: 10px;
+          padding: 25px;
+          transition: var(--transition);
+        }
+
+        .info-card:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+          color: var(--accent);
+          margin-bottom: 15px;
+        }
+
+        .history-item {
+          display: flex;
+          margin-bottom: 30px;
+          padding-left: 30px;
+          border-left: 3px solid var(--accent);
+          position: relative;
+        }
+
+        .history-year {
+          position: absolute;
+          left: -15px;
+          top: 0;
+          background: var(--accent);
+          color: var(--white);
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+        }
+
+        .history-content {
+          padding-left: 30px;
+        }
+
+        .map-container {
+          height: 400px;
+          background: var(--light);
+          border-radius: 15px;
+          overflow: hidden;
+          margin-top: 30px;
+          box-shadow: var(--shadow);
+        }
+
+        /* レスポンシブデザイン 平板：双列 */
+        @media (max-width: 992px) {
+          .overview-content {
+            flex-direction: column;
+          }
+
+          .hero h1 {
+            font-size: 2.8rem;
+          }
+
+          .hero p {
+            font-size: 1.2rem;
+          }
+
+          .info-card {
+            padding: 15px;
+          }
+
+          .info-card h3 {
+            font-size: medium;
+          }
+
+        }
+
+        @media (max-width: 768px) {
+          .nav-desktop {
+            display: none;
+          }
+
+          .hero {
+            padding: 100px 0 60px;
+          }
+
+          .hero h1 {
+            font-size: 2.2rem;
+          }
+
+          .hero-btns {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .section-title {
+            font-size: 1.8rem;
+          }
+
+          .breadcrumb {
+            flex-wrap: wrap;
+          }
+        }
