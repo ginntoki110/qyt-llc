@@ -346,7 +346,7 @@ abbr {
 
 
 form {
-    background: #1a3c3c;
+    background: #25332d;
     /* 深色半透明背景 */
     /* 明亮字体 */
     color: white;
@@ -463,13 +463,6 @@ textArea::placeholder {
     font-style: italic;
     font-weight: normal;
     text-align: left;
-}
-
-input:focus,
-textarea:focus {
-    /* background-color: #f6f8e1; */
-    outline: none;
-    border: 2px solid #e1e900d9;
 }
 
 .form-wrapper {

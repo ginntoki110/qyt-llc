@@ -36,23 +36,29 @@ function clearForm() {
         } else if (counter.id === "fileSize") {
             counter.textContent = "";
         } else { }
-
+        
     });
-
+    
     // document.getElementById("fileSize").textContent = "";
-
+    
     document.querySelectorAll(".error-message").forEach(error => {
         error.textContent = "";
         error.style.display = "none";
     });
-
+    
     const inputs = document.querySelectorAll('input, textarea, select');
-
+    
     inputs.forEach(input => {
         input.value = "";
-        input.style.backgroundColor = "white"; // 去除红色背景
-        input.style="border: none";
+        input.style = "border: none";
     });
+    // // 初始化inquiryType样式
+    document.getElementById('inquiryType').style="font-style: italic; color: #888;font-size: 0.8em;";
+}
+
+function showboder(e) {
+    e.style = "border: 2px solid rgba(238, 238, 60, 0.85);";
+
 }
 
 // 姓名计数器
@@ -84,7 +90,7 @@ function validateName() {
     } else {
         error.textContent = "";
         error.style.display = "none";
-        name.style = "border: none";; // 去除红色背景
+        name.style = "border: none;background-color:rgb(232, 240, 254);"; 
         return true;
     }
 }
@@ -117,7 +123,7 @@ function validateTel() {
     } else {
         error.textContent = "";
         error.style.display = "none";
-        tel.style = "border: none";; // 去除红色背景
+        tel.style = "border: none;background-color:rgb(232, 240, 254);"; 
         return true;
     }
 }
@@ -151,7 +157,7 @@ function validateEmail() {
     } else {
         error.textContent = "";
         error.style.display = "none";
-        email.style = "border: 0px solid red"; // 去除红色背景
+        email.style = "border: none;background-color:rgb(232, 240, 254);"; 
         return true;
     }
 }
@@ -185,7 +191,7 @@ function validateTitle() {
     } else {
         error.textContent = "";
         error.style.display = "none";
-        title.style = "border: 0px solid red"; // 去除红色背景
+        title.style = "border: none;background-color:rgb(232, 240, 254);"; 
         return true;
     }
 }
@@ -218,7 +224,7 @@ function validateQuestion() {
     } else {
         error.textContent = "";
         error.style.display = "none";
-        question.style = "border: 0px solid red"; // 去除红色背景
+        question.style = "border: none;background-color:rgb(232, 240, 254);"; 
         return true;
     }
 }
@@ -286,19 +292,22 @@ function validateFileSize(input) {
 function clearErrormsg() {
     document.getElementById("agreeError").style.display = "none";
 }
+function inquiryTypeOnchange() {
+    document.getElementById("inquiryType").style.backgroundColor = "rgb(232, 240, 254)";
+}
 
 // 提交校验
 function validateAll() {
-    const flg = true;
+    let flg = true;
     // 校验所有字段
-    const isNameValid = validateName();
-    const isTelValid = validateTel();
-    const isEmailValid = validateEmail();
-    const isTitleValid = validateTitle();
-    const isQuestionValid = validateQuestion();
-    const attachment = document.getElementById("attachment");
-    const isFileValid = validateFileSize(attachment);
-    const isAgreeValid = validateAgree();
+    let isNameValid = validateName();
+    let isTelValid = validateTel();
+    let isEmailValid = validateEmail();
+    let isTitleValid = validateTitle();
+    let isQuestionValid = validateQuestion();
+    let attachment = document.getElementById("attachment");
+    let isFileValid = validateFileSize(attachment);
+    let isAgreeValid = validateAgree();
     // 清空错误提示
     if (!isNameValid || !isTelValid || !isEmailValid || !isQuestionValid || !isFileValid || !isAgreeValid || !isTitleValid) {
         flg = false;
@@ -379,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 附件
         if (form.attachment.value) {
             html += `<p><strong>ファイル：</strong> ${form.attachment.files[0].name}　${fileSize.textContent}</p>`;
-        }else {
+        } else {
             html += `<p><strong>ファイル：</strong> なし</p>`;
         }
         confirmContent.innerHTML = html;
@@ -521,6 +530,17 @@ document.addEventListener('DOMContentLoaded', function () {
         input.addEventListener('focus', () => input.placeholder = '');
         input.addEventListener('blur', () => input.placeholder = originalPlaceholder);
     });
+
+    //inquiryType下拉框改变式样
+    document.getElementById('inquiryType').addEventListener('change', function () {
+        if (this.value === "") {
+            this.style = "font-style: italic; color: #888;font-size: 0.8em;";
+        } else {
+            this.style = "font-style: normal; color: #000;font-size: 1em;";
+        }
+    });
+    // // 初始化时设置样式
+    document.getElementById('inquiryType').dispatchEvent(new Event('change'));
 
 
 });

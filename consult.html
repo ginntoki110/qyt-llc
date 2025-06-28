@@ -233,7 +233,7 @@
 
                     <div class="form-wrapper">
                         <input type="text" name="name" id="name" placeholder="例：田中　太郎" title="お名前を2桁以上20桁以内で入力してください"
-                            minlength="2" maxlength="20" required oninput="updateNameCounter()" onblur="validateName()">
+                            minlength="2" maxlength="20" required onfocus="showboder(this)" oninput="updateNameCounter()" onblur="validateName()">
                         <span id="nameCounter" class="counter">0 / 20</span>
                     </div>
 
@@ -241,7 +241,7 @@
                     <div id="telError" class="error-message"></div>
                     <div class="form-wrapper">
                         <input type="tel" name="tel" id="tel" maxlength="11" placeholder="例：08080123456"
-                            title="電話番号を半角数字で入力してください" oninput="updateTelCounter()" onblur="validateTel()"
+                            title="電話番号を半角数字で入力してください" onfocus="showboder(this)"  oninput="updateTelCounter()" onblur="validateTel()"
                             autocomplete="off">
                         <span id="telCounter" class="counter">0 / 11</span>
                     </div>
@@ -251,7 +251,7 @@
 
                     <div class="form-wrapper">
                         <input type="email" name="email" id="email" placeholder="例：tanaka@gmail.com" required
-                            title="メールアドレスを半角英数字で入力してください" maxlength="30" oninput="updateEmailCounter()"
+                            title="メールアドレスを半角英数字で入力してください" maxlength="30" onfocus="showboder(this)"  oninput="updateEmailCounter()"
                             onblur="validateEmail()">
                         <span id="emailCounter" class="counter">0 / 30</span>
                     </div>
@@ -259,12 +259,12 @@
                     <label for="inquiryType"><span class="require">必須</span> お問い合わせ種類</label>
                     <div class="form-wrapper">
                         <select name="inquiryType" id="inquiryType" class="select" required title="お問い合わせ種類を選択してください"
-                            onselect="clearErrormsg()" placeholder="例：tanaka@gmail.com">
-                            <option value="" disabled selected style="font-style: italic;">いずれかを選択してください</option>
-                            <option value="１.製品/サービス">１.製品/サービスについて</option>
-                            <option value="２.お見積り依頼">２.お見積り依頼</option>
-                            <option value="３.採用応募">３.採用応募</option>
-                            <option value="４.その他">４.その他のお問い合わせ</option>
+                            style="font-style: italic; color: #888;font-size: 0.8em;background-color: rgb(232, 240, 254);">
+                            <option value="" disabled selected style="font-style: italic; color: #888;">いずれかを選択してください</option>
+                            <option value="１.製品/サービス" style="font-style: normal; color: #000;">１.製品/サービスについて</option>
+                            <option value="２.お見積り依頼" style="font-style: normal; color: #000;">２.お見積り依頼</option>
+                            <option value="３.採用応募" style="font-style: normal; color: #000;">３.採用応募</option>
+                            <option value="４.その他" style="font-style: normal; color: #000;">４.その他のお問い合わせ</option>
                         </select>
                         <span class="counter" style="visibility: hidden;">0 / 0</span>
                     </div>
@@ -273,7 +273,7 @@
                     <div id="titleError" class="error-message"></div>
                     <div class="form-wrapper">
                         <input type="title" name="title" id="title" placeholder="例：ホームページ見積もり依頼" title="タイトルを入力してください"
-                            maxlength="20" oninput="updateTitleCounter()" onblur="validateTitle()">
+                            maxlength="20" onfocus="showboder(this)"  oninput="updateTitleCounter()" onblur="validateTitle()">
                         <span id="titleCounter" class="counter">0 / 20</span>
                     </div>
 
@@ -282,7 +282,7 @@
                     <div class="form-wrapper">
                         <textarea name="question" id="question" minlength="10" maxlength="1000" required
                             placeholder="例：ホームページ制作を依頼したい...など、気軽にご記入ください！" title="10桁以上1000桁以内で入力してください"
-                            oninput="updateQuestionCounter()" onblur="validateQuestion()"></textarea>
+                            onfocus="showboder(this)"  oninput="updateQuestionCounter()" onblur="validateQuestion()"></textarea>
                         <span id="questionCounter" class="counter">0/1000</span>
                     </div>
 
