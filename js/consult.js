@@ -379,6 +379,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // 附件
         if (form.attachment.value) {
             html += `<p><strong>ファイル：</strong> ${form.attachment.files[0].name}　${fileSize.textContent}</p>`;
+        }else {
+            html += `<p><strong>ファイル：</strong> なし</p>`;
         }
         confirmContent.innerHTML = html;
 
