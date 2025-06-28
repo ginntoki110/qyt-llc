@@ -346,10 +346,10 @@ abbr {
 
 
 form {
-    background: rgba(20, 36, 36, 0.85);
+    background: #1a3c3c;
     /* 深色半透明背景 */
-    color: #fff;
     /* 明亮字体 */
+    color: white;
     width: 100%;
     max-width: 900px;
     padding: 1em 1em;
@@ -448,7 +448,7 @@ form textarea {
 }
 .error-message {
     display: none;
-    color: rgb(218, 133, 133);
+    color: red;
     font-size: 0.8rem;
     /* font-family: sans-serif; */
     /* margin-top: 10px; */
@@ -459,7 +459,7 @@ form textarea {
 
 input::placeholder,
 textArea::placeholder {
-    font-size: 1em;
+    font-size: 0.8em;
     font-style: italic;
     font-weight: normal;
     text-align: left;
@@ -467,9 +467,9 @@ textArea::placeholder {
 
 input:focus,
 textarea:focus {
-    background-color: #f6f8e1;
+    /* background-color: #f6f8e1; */
     outline: none;
-    border: 1px solid #f0ec64d9;
+    border: 2px solid #e1e900d9;
 }
 
 .form-wrapper {

@@ -23,9 +23,48 @@
     <link rel="icon" href="img/siteIcon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/siteIcon.jpg">
 
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+        const supabaseUrl = 'https://prggvxzaiqowdkysrykh.supabase.co/'; // ← Project URL
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByZ2d2eHphaXFvd2RreXNyeWtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEwMzUzNzAsImV4cCI6MjA2NjYxMTM3MH0.uof2aYBZgrXet9_zuH5-ZMsLad0LRSZJGu94fQG3lio'; // API Keys
+
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        // 安全生成文件名
+        function getSafeFilename(originalName) {
+            const ext = originalName.split('.').pop(); // 取后缀
+            const uuid = crypto.randomUUID ? crypto.randomUUID() : Date.now(); // 唯一标识符
+            return `${uuid}.${ext}`; // 返回: abcdefg.png
+        }
+
+        window.uploadToSupabase = async function (file) {
+            // const filename = Date.now() + "_" + encodeURIComponent(file.name);
+            //生成安全文件名，防止出错。
+            const now = new Date();
+            const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+            // const today = new Date().toISOString().slice(0, 10); // '2025-06-06'
+            const safeFilename = `uploads/${today}/${getSafeFilename(file.name)}`;
+            const bucket = 'qytllc-form';
+
+            const { data, error } = await supabase.storage
+                .from(bucket) // bucket 名称
+                .upload(safeFilename, file, {
+                    cacheControl: '3600',
+                    upsert: false
+                });
+
+            if (error) throw error;
+
+            return `${supabaseUrl}/storage/v1/object/public/${bucket}/${safeFilename}`;
+        };
+    </script>
+
     <script src="./js/consult.js" defer></script>
     <script src="./js/common.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
 
     <title>QYT合同会社</title>
 </head>
@@ -252,8 +291,7 @@
                         <div id="attachmentError" class="error-message"></div>
                         <div class="form-wrapper">
                             <input type="file" name="attachment" id="attachment" class="file-input"
-                                enctype="multipart/form-data"
-                                accept=".pdf,.jpg,.jpeg,.png,.docx,.xlsx"
+                                enctype="multipart/form-data" accept=".pdf,.jpg,.jpeg,.png,.docx,.xlsx"
                                 title="ファイルを選択してください（.pdf,.jpg,.jpeg,.png,.docx,.xlsx形式）"
                                 onchange="validateFileSize(this)" onblur="clearAttachmentError()">
                             <span class="counter" id="fileSize" name="fileSize"></span>

@@ -51,6 +51,7 @@ function clearForm() {
     inputs.forEach(input => {
         input.value = "";
         input.style.backgroundColor = "white"; // 去除红色背景
+        input.style="border: none";
     });
 }
 
@@ -77,13 +78,13 @@ function validateName() {
         // name.select();
         name.scrollIntoView({ behavior: "smooth", block: "center" });
         // 滚动到姓名输入框
-        name.style.backgroundColor = "pink"; // 添加红色背景以突出显示错误
+        name.style = "border: 1px solid red"; // 添加红色背景以突出显示错误
 
         return false;
     } else {
         error.textContent = "";
         error.style.display = "none";
-        name.style.backgroundColor = "white"; // 去除红色背景
+        name.style = "border: none";; // 去除红色背景
         return true;
     }
 }
@@ -111,12 +112,12 @@ function validateTel() {
         error.style.display = "block";
         tel.scrollIntoView({ behavior: "smooth", block: "center" });
         // 滚动到姓名输入框
-        tel.style.backgroundColor = "pink"; // 添加红色背景以突出显示错误
+        tel.style = "border: 1px solid red";; // 添加红色背景以突出显示错误
         return false;
     } else {
         error.textContent = "";
         error.style.display = "none";
-        tel.style.backgroundColor = "white"; // 去除红色背景
+        tel.style = "border: none";; // 去除红色背景
         return true;
     }
 }
@@ -144,13 +145,13 @@ function validateEmail() {
         error.style.display = "block";
         email.scrollIntoView({ behavior: "smooth", block: "center" });
         // 滚动到姓名输入框
-        email.style.backgroundColor = "pink"; // 添加红色背景以突出显示错误
+        email.style = "border: 1px solid red"; // 添加红色背景以突出显示错误
 
         return false;
     } else {
         error.textContent = "";
         error.style.display = "none";
-        email.style.backgroundColor = "white"; // 去除红色背景
+        email.style = "border: 0px solid red"; // 去除红色背景
         return true;
     }
 }
@@ -178,13 +179,13 @@ function validateTitle() {
         // title.select();
         title.scrollIntoView({ behavior: "smooth", block: "center" });
         // 滚动到姓名输入框
-        natitleme.style.backgroundColor = "pink"; // 添加红色背景以突出显示错误
+        natitleme.style = "border: 1px solid red"; // 添加红色背景以突出显示错误
 
         return false;
     } else {
         error.textContent = "";
         error.style.display = "none";
-        title.style.backgroundColor = "white"; // 去除红色背景
+        title.style = "border: 0px solid red"; // 去除红色背景
         return true;
     }
 }
@@ -212,12 +213,12 @@ function validateQuestion() {
         error.style.display = "block";
         question.scrollIntoView({ behavior: "smooth", block: "center" });
         // 滚动到姓名输入框
-        question.style.backgroundColor = "pink"; // 添加红色背景以突出显示错误
+        question.style = "border: 1px solid red"; // 添加红色背景以突出显示错误
         return false;
     } else {
         error.textContent = "";
         error.style.display = "none";
-        question.style.backgroundColor = "white"; // 去除红色背景
+        question.style = "border: 0px solid red"; // 去除红色背景
         return true;
     }
 }
@@ -235,11 +236,11 @@ function validateAgree() {
         agreeError.style.display = "block";
         agree.scrollIntoView({ behavior: "smooth", block: "center" });
         // 滚动到姓名输入框
-        agree.style.backgroundColor = "pink"; // 添加红色背景以突出显示错误
+        agree.style = "border: 1px solid red"; // 添加红色背景以突出显示错误
         flg = false;
     } else {
         agreeError.style.display = "none";
-        agree.style.backgroundColor = "white"; // 去除红色背景
+        agree.style = "border: 0px solid red"; // 去除红色背景
     }
 
     return flg;
@@ -347,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmContent = document.getElementById('confirmContent');
     const steps = document.querySelectorAll('.progress-bar .step');
     const fileSize = document.getElementById('fileSize');
+    const submitBtn = document.getElementById("submitBtn");
 
 
     // 进入确认页
@@ -401,52 +403,111 @@ document.addEventListener('DOMContentLoaded', function () {
         steps[0].classList.add('active');
         steps[1].classList.remove('active');
         steps[2].classList.remove('active');
+        submitBtn.disabled = false;
+        submitBtn.innerText = "送信";
     });
 
-    // 完了页
-    form.addEventListener('submit', function (e) {
+    // // 完了页 （EmailJS直接传attachment作为邮件附件，但免费版附件容量只有50kb）
+    // form.addEventListener('submit', function (e) {
+    //     e.preventDefault();
+
+    //     const attachment = document.getElementById('attachment');
+    //     if (attachment.files.length > 0) {
+    //         const file = attachment.files[0];
+
+    //         // 限制上传文件类型 屏蔽.xls, .xlsm等高风险文档
+    //         const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    //         if (!allowedTypes.includes(file.type)) {
+    //             alert('このファイル形式は許可されていません。PDF、JPG、PNG、DOCXのみアップロード可能です。');
+    //             return false;
+    //         }
+
+    //         //提交前校验
+    //         if (file.size > 1024 * 1024) {
+    //             alert('ファイルサイズは1MB以下にしてください。');
+    //             return false;
+    //         }
+
+    //         // 解决中文文件名问题
+    //         const renamedFile = new File([file], encodeURIComponent(file.name), {
+    //             type: file.type
+    //         });
+
+    //         // 替换文件对象
+    //         const dataTransfer = new DataTransfer();
+    //         dataTransfer.items.add(renamedFile);
+    //         attachment.files = dataTransfer.files;
+    //     }
+
+    //     // EmailJS支持直接传FormData
+    //     emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+    //         .then(function (response) {
+    //             // 成功处理
+    //             inputStep.style.display = 'none';
+    //             confirmStep.style.display = 'none';
+    //             doneStep.style.display = '';
+    //             steps[0].classList.remove('active');
+    //             steps[1].classList.remove('active');
+    //             steps[2].classList.add('active');
+    //         }, function (error) {
+    //             alert('送信に失敗しました。再度お試しください。可能な原因：ファイルサイズオーバー、通信障害など');
+    //         });
+    // });
+
+
+    // 完了页（使用Supabase的bucket 免费）
+
+    form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const attachment = document.getElementById('attachment');
-        if (attachment.files.length > 0) {
-            const file = attachment.files[0];
+        submitBtn.disabled = true;
+        submitBtn.innerText = "送信中...";
 
-            // 限制上传文件类型 屏蔽.xls, .xlsm等高风险文档
-            const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-            if (!allowedTypes.includes(file.type)) {
-                alert('このファイル形式は許可されていません。PDF、JPG、PNG、DOCXのみアップロード可能です。');
-                return false;
+        const file = document.getElementById("attachment").files[0];
+        let attachment_url = "（添付なし）";
+        let original_filename = "";
+        let fileSize2 = "";
+
+        if (file) {
+            original_filename = file.name;
+            fileSize2 = file.size;
+            try {
+                attachment_url = await uploadToSupabase(file);
+            } catch (e) {
+                alert("ファイルアップロードに失敗しました");
+                return;
             }
-
-            //提交前校验
-            if (file.size > 1024 * 1024) {
-                alert('ファイルサイズは1MB以下にしてください。');
-                return false;
-            }
-
-            // 解决中文文件名问题
-            const renamedFile = new File([file], encodeURIComponent(file.name), {
-                type: file.type
-            });
-
-            // 替换文件对象
-            const dataTransfer = new DataTransfer();
-            dataTransfer.items.add(renamedFile);
-            attachment.files = dataTransfer.files;
         }
 
-        // EmailJS支持直接传FormData
-        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-            .then(function (response) {
-                // 成功处理
+
+        //指定参数情报
+        const templateParams = {
+            name: form.name.value.trim(),
+            tel: form.tel.value.trim(),
+            email: form.email.value.trim(),
+            inquiryType: form.inquiryType.options[form.inquiryType.selectedIndex].text,
+            title: form.title.value.trim(),
+            question: form.question.value.trim(),
+            attachment_url: attachment_url,
+            original_filename: original_filename,
+            fileSize: fileSize.textContent
+        };
+
+        //用send替代sendform方法
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+            .then(() => {
+                // 显示成功页面
                 inputStep.style.display = 'none';
                 confirmStep.style.display = 'none';
                 doneStep.style.display = '';
                 steps[0].classList.remove('active');
                 steps[1].classList.remove('active');
                 steps[2].classList.add('active');
-            }, function (error) {
+            }).catch(() => {
                 alert('送信に失敗しました。再度お試しください。可能な原因：ファイルサイズオーバー、通信障害など');
+            }).finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "送信";
             });
     });
 

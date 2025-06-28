@@ -24,16 +24,16 @@ function closeMenu() {
 // common.js 优化版本
 document.addEventListener('DOMContentLoaded', function () {
     // ✅ 1. 加入 footer 加载逻辑
-    fetch('./footer.html')
-        .then(response => response.text())
-        .then(data => {
-            const footerElement = document.getElementById('footer-placeholder');
-            if (footerElement) {
-                footerElement.innerHTML = data;
-            } else {
-                console.warn("找不到 footer-placeholder 元素");
-            }
-        });
+    // fetch('./footer.html')
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         const footerElement = document.getElementById('footer-placeholder');
+    //         if (footerElement) {
+    //             footerElement.innerHTML = data;
+    //         } else {
+    //             console.warn("找不到 footer-placeholder 元素");
+    //         }
+    //     });
 
     // 卡片加载动画：掉落和浮出
     const cards = document.querySelectorAll('.drop-down,.float-out');
