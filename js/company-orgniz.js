@@ -45,7 +45,7 @@ function searchDepartment() {
     nodes.forEach(node => {
         const title = node.querySelector('.node-title').textContent.toLowerCase();
         const desc = node.querySelector('.node-desc')?.textContent.toLowerCase() || '';
-        if (title.llcludes(term) || desc.llcludes(term)) {
+        if (title.includes(term) || desc.includes(term)) {
             matchedNodes.push(node);
         }
     });
@@ -100,7 +100,7 @@ function highlightAndCenter(node) {
 //         const title = node.querySelector('.node-title').textContent.toLowerCase();
 //         const desc = node.querySelector('.node-desc')?.textContent.toLowerCase() || '';
 
-//         if (title.llcludes(searchTerm) || desc.llcludes(searchTerm)) {
+//         if (title.includes(searchTerm) || desc.includes(searchTerm)) {
 //             found = true;
 //             // ハイライト表示 
 //             node.style.boxShadow = '0 0 0 3px #ff9800';
