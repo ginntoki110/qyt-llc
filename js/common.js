@@ -281,6 +281,9 @@ function navigateToPath(path, pushState = true) {
 
 // 更新面包屑导航
 function updateBreadcrumb() {
+
+    if (!breadcrumbElement) return;
+
     // 清除现有面包屑（保留首页）
     const homeItem = breadcrumbElement.querySelector('li:first-child');
     breadcrumbElement.innerHTML = '';
