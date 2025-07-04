@@ -446,6 +446,7 @@ form textarea {
     resize: none;
     /* 禁止缩放 */
 }
+
 .error-message {
     display: none;
     color: red;
@@ -674,46 +675,54 @@ textArea::placeholder {
         z-index: 1003;
     }
 
+    /* 移动端导航栏整体样式 */
     .nav-mobile {
         width: 100%;
     }
 
-    /* 导航栏-移动端 */
+    /* 移动端导航列表样式 */
     .nav-mobile .nav-list {
         flex-direction: column;
         margin-top: 5rem;
         gap: 20px;
     }
 
+    /* 移动端导航链接样式 */
     .nav-mobile a {
         font-size: 1.2rem;
         width: 100%;
     }
 
-    /* 导航栏子菜单-移动端 */
+    /* 子菜单：默认收起 */
     .nav-mobile .nav-item .subnav-list {
         background-color: rgba(249, 247, 247, 0.5);
-        opacity: 1;
         position: static;
-        /* 取消绝对定位 */
-        display: none;
+        opacity: 1;
+        display: flex;  
         flex-direction: column;
         text-align: center;
         width: 100%;
         margin: 0;
-        padding: 0;
-        /* transition: max-height 0.3s; */
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        padding: 0 0;
     }
 
-    .nav-mobile .nav-item .on+.subnav-list,
+    /* 子菜单展开时 */
+    .nav-mobile .nav-item .subnav-list.expanded {
+        max-height: 500px;
+        padding: 10px 0;
+    }
+
+    /* 不要再使用 display: none 和 display: block 切换，会干扰动画 */
+    /* .nav-mobile .nav-item .on+.subnav-list,
     .nav-mobile .nav-item .subnav-list.active {
         display: block;
-    }
-
-    /* .nav-mobile .nav-item .subnav-list a {
-        display: none;
     } */
 
+    /* 图标按钮 */
     .nav-mobile .nav-list li span {
         width: 48px;
         height: 48px;
@@ -721,14 +730,17 @@ textArea::placeholder {
         right: 0;
         top: 0;
         background: url(../img/icon01.png) no-repeat center center / 15px;
-        /* transition: all 0.5s ease-in-out; */
+        transition: transform 0.3s ease;
     }
 
+    /* 图标按钮激活状态（例如箭头向上） */
     .nav-mobile .nav-list li span.on {
         background: url(../img/icon02.png) no-repeat center center / 15px;
+        transform: rotate(180deg);
     }
 
-  
+
+
     .banner {
         height: 0vh;
         /* overflow: hidden; */
@@ -829,7 +841,7 @@ textArea::placeholder {
     }
 
     .footer-container {
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
         /* 只显示两列*/
     }
 

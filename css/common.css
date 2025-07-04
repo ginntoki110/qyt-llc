@@ -274,7 +274,6 @@ nav a:hover,
 }
 
 /* 子菜单项 */
-/* 隐藏子菜单 渐进消失效果*/
 .nav-item .subnav-list {
   list-style: none;
   opacity: 0;
