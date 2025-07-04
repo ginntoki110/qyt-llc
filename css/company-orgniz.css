@@ -148,21 +148,39 @@
         }
 
         .node.management {
-            border-color: #00a896;
-            background: linear-gradient(to bottom, #ffffff, #f0fffc);
-        }
-
-        .node.management .icon {
-            color: #00a896;
-        }
-
-        .node.sales {
             border-color: #ff6b6b;
             background: linear-gradient(to bottom, #ffffff, #fff0f0);
         }
 
-        .node.sales .icon {
+        .node.management .icon {
             color: #ff6b6b;
+        }
+
+        .node.sales {
+            border-color: #00a896;
+            background: linear-gradient(to bottom, #ffffff, #f0fffc);
+        }
+
+        .node.sales .icon {
+            color: #00a896;
+        }
+
+        .node.planning {
+            border-color: #00a896;
+            background: linear-gradient(to bottom, #ffffff, #f0fffc);
+        }
+
+        .node.planning .icon {
+            color: #00a896;
+        }
+
+        .node.consulting {
+            border-color: #4ff04f;
+            background: linear-gradient(to bottom, #ffffff, #d1fad1);
+        }
+
+        .node.consulting .icon {
+            color: #4ff04f;
         }
 
         .node.development {
@@ -448,7 +466,8 @@
                 flex-direction: column;
                 text-align: center;
             }
-        /* }
+
+            /* }
 
         @media (max-width: 600px) { */
             .banner {

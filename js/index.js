@@ -154,26 +154,26 @@ document.addEventListener('DOMContentLoaded', function () {
         // 直接绑定在 span 上，如果 span 是后面才插入 DOM 的（比如页面切换后才显示），那么最初的 querySelectorAll('.nav-mobile .nav-list .nav-item > span') 找不到这些 span，就不会给它们绑定事件。
         // document.querySelectorAll('.nav-mobile .nav-list .nav-item > span').forEach(icon => {
 
-        const navList = document.querySelector('.nav-mobile .nav-list');
-        if (navList && !navList._hasSpanDelegate) { // 防止重复绑定
-            navList.addEventListener('click', function (e) {
-                if (e.target.matches('.nav-item > span')) {
-                    e.stopPropagation();
-                    const icon = e.target;
-                    const navItem = icon.closest('.nav-item');
-                    const subnav = navItem.querySelector('.subnav-list');
-                    if (!subnav) return;
-                    if (icon.classList.contains('on')) {
-                        icon.classList.remove('on');
-                        subnav.style.display = 'none';
-                    } else {
-                        icon.classList.add('on');
-                        subnav.style.display = 'block';
-                    }
-                }
-            });
-            navList._hasSpanDelegate = true;
-        }
+        // const navList = document.querySelector('.nav-mobile .nav-list');
+        // if (navList && !navList._hasSpanDelegate) { // 防止重复绑定
+        //     navList.addEventListener('click', function (e) {
+        //         if (e.target.matches('.nav-item > span')) {
+        //             e.stopPropagation();
+        //             const icon = e.target;
+        //             const navItem = icon.closest('.nav-item');
+        //             const subnav = navItem.querySelector('.subnav-list');
+        //             if (!subnav) return;
+        //             if (icon.classList.contains('on')) {
+        //                 icon.classList.remove('on');
+        //                 subnav.style.display = 'none';
+        //             } else {
+        //                 icon.classList.add('on');
+        //                 subnav.style.display = 'block';
+        //             }
+        //         }
+        //     });
+        //     navList._hasSpanDelegate = true;
+        // }
     }
 
 

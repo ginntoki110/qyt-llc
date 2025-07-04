@@ -202,7 +202,7 @@ const modalSatisfaction = document.getElementById('modalSatisfaction');
 
 // 部署情報のデータ
 const departmentData = {
-    "代表取締役社長": {
+    "代表社員・社長": {
         // icon: "fa-crown",
         icon: "fa-user-tie",
         description: "会社全体の経営戦略と方向性を決定する最高責任者",
@@ -225,6 +225,22 @@ const departmentData = {
         staff: 18,
         projects: 32,
         years: 4,
+        satisfaction: "89%"
+    },
+    "メディア制作・運営": {
+        icon: "fa-circle-play",
+        description: "YouTubeやSNSと組み合わせて、認知拡大とブランディングを強化。",
+        staff: 10,
+        projects: 5,
+        years: 2,
+        satisfaction: "92%"
+    },
+    "企画部": {
+        icon: "fa-hand-point-up",
+        description: "事業企画、プロダクト企画、各種イベントなどの企画を担当。組織の活性化と多様性を図っています",
+        staff: 5,
+        projects: 4,
+        years: 3,
         satisfaction: "89%"
     },
     "開発本部": {
@@ -261,7 +277,7 @@ const departmentData = {
     },
     "DX推進部": {
         icon: "fa-rocket",
-        description: "デジタルトランスフォーメーションを推進する部門。",
+        description: "AIなどの先端技術を活用し、DXを推進する部門。",
         staff: 7,
         projects: 5,
         years: 5,
